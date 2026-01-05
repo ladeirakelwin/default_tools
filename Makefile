@@ -44,8 +44,8 @@ grc:
 	git reset --soft HEAD~1
 	git status
 
-gcbb:
-	git checkout -b $(filter-out gcbb,$(MAKECMDGOALS))
+gctb:
+	git checkout -b $(filter-out gctb,$(MAKECMDGOALS))
 	git branch
 
 gct:
