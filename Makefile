@@ -13,6 +13,7 @@ help:
 	@echo "grea - git restore . and git status"
 	@echo "gre - git restore <file>"
 	@echo "gdb - git branch -d <branch_name> and git branch"
+	@echo "gsw - git switch <branch_name>"
 
 gs:
 	git status
@@ -59,3 +60,6 @@ gre:
 gdb:
 	git branch -d $(filter-out gdb,$(MAKECMDGOALS))
 	git branch
+
+gsw:
+	git switch $(filter-out gsw,$(MAKECMDGOALS))
