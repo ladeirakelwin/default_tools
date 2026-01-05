@@ -1,4 +1,4 @@
-.PHONY:  gs gc gad gr gra gp gpm grc gnb gct gdb help
+.PHONY:  gs gc gad gr gra gp gpm grc gcbb gct gdb help
 
 help:
 	@echo "gs - git status"
@@ -9,7 +9,7 @@ help:
 	@echo "gp - git push origin <branch>"
 	@echo "gpm - git push origin main"
 	@echo "grc - git reset --soft HEAD~1 and git status"
-	@echo "gnb - git checkout -b <new_branch> and git branch"
+	@echo "gcbb - git checkout -b <new_branch> and git branch"
 	@echo "gct - git checkout . and git status"
 	@echo "gdb - git branch -d <branch_name> and git branch"
 
@@ -44,8 +44,8 @@ grc:
 	git reset --soft HEAD~1
 	git status
 
-gnb:
-	git checkout -b $(filter-out gnb,$(MAKECMDGOALS))
+gcbb:
+	git checkout -b $(filter-out gcbb,$(MAKECMDGOALS))
 	git branch
 
 gct:
