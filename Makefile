@@ -9,7 +9,7 @@ help:
 	@echo "gp - git push origin <branch>"
 	@echo "gpm - git push origin main"
 	@echo "grc - git reset --soft HEAD~1 and git status"
-	@echo "gcbb - git checkout -b <new_branch> and git branch"
+	@echo "gctb - git checkout -b <new_branch> and git branch"
 	@echo "gct - git checkout . and git status"
 	@echo "gdb - git branch -d <branch_name> and git branch"
 
