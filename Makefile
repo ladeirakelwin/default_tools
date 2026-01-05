@@ -11,6 +11,7 @@ help:
 	@echo "grc - git reset --soft HEAD~1 and git status"
 	@echo "gctb - git checkout -b <new_branch> and git branch"
 	@echo "grea - git restore . and git status"
+	@echo "gre - git restore <file>"
 	@echo "gdb - git branch -d <branch_name> and git branch"
 
 gs:
@@ -51,6 +52,9 @@ gctb:
 grea:
 	git restore .
 	git status
+
+gre:
+	git restore $(filter-out gre,$(MAKECMDGOALS))
 
 gdb:
 	git branch -d $(filter-out gdb,$(MAKECMDGOALS))
