@@ -1,47 +1,57 @@
-.PHONY: gstatus gcommit gadd gresetall gpush gpushm gresetcommit gnewbranch gcheckout gdeletebrach help
+.PHONY:  gs gc gad gr gra gp gpm grc gnb gct gdb help
 
 help:
-	@echo "gstatus gcommit gadd gresetall gpush gpushm gresetcommit gnewbranch gcheckout gdeletebrach help"
+	@echo "gs - git status"
+	@echo "gc - cz commit"
+	@echo "gad - git add <file> and git status"
+	@echo "gr - git reset <file> and git status"
+	@echo "gra - git reset . and git status"
+	@echo "gp - git push origin <branch>"
+	@echo "gpm - git push origin main"
+	@echo "grc - git reset --soft HEAD~1 and git status"
+	@echo "gnb - git checkout -b <new_branch> and git branch"
+	@echo "gct - git checkout . and git status"
+	@echo "gdb - git branch -d <branch_name> and git branch"
 
-gstatus:
+gs:
 	git status
 
-gcommit:
+gc:
 	cz commit
 
-gadd:
-	git add $(filter-out gadd,$(MAKECMDGOALS))
+gad:
+	git add $(filter-out gad,$(MAKECMDGOALS))
 	@echo "Adicionado(s): $(filter-out gadd,$(MAKECMDGOALS))"
 	git status
 
 %:
 	@:
 
-greset:
-	git reset $(filter-out greset,$(MAKECMDGOALS))
+gr:
+	git reset $(filter-out gr,$(MAKECMDGOALS))
 	git status
 
-gresetall:
+gra:
 	git reset .
 	git status
-gpush:
-	git push origin $(filter-out gpush,$(MAKECMDGOALS))
+gp:
+	git push origin $(filter-out gp,$(MAKECMDGOALS))
 
-gpushm:
+gpm:
 	git push origin main
 
-gresetcommit:
+grc:
 	git reset --soft HEAD~1
 	git status
 
-gnewbranch:
-	git checkout -b $(filter-out gnewbranch,$(MAKECMDGOALS))
+gnb:
+	git checkout -b $(filter-out gnb,$(MAKECMDGOALS))
 	git branch
 
-gcheckout:
-	git checkout $(filter-out gcheckout,$(MAKECMDGOALS))
+gct:
+	git checkout $(filter-out gct,$(MAKECMDGOALS))
 	git status
 
-gdeletebranch:
-	git branch -d $(filter-out gdeletebranch,$(MAKECMDGOALS))
-	git status
+gdb:
+	git branch -d $(filter-out gdb,$(MAKECMDGOALS))
+	git branch
