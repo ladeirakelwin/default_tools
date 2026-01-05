@@ -50,7 +50,6 @@ gcbb:
 
 gct:
 	git checkout $(filter-out gct,$(MAKECMDGOALS))
-	git status
 
 gdb:
 	git branch -d $(filter-out gdb,$(MAKECMDGOALS))
