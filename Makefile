@@ -1,4 +1,4 @@
-.PHONY:  gs gc gad gr gra gp gpm grc gcbb gct gdb help
+.PHONY:  gs gc gad gr gra gp gpm grc gctb grea gre gdb gsw help
 
 help:
 	@echo "gs - git status"
