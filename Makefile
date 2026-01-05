@@ -10,7 +10,7 @@ help:
 	@echo "gpm - git push origin main"
 	@echo "grc - git reset --soft HEAD~1 and git status"
 	@echo "gctb - git checkout -b <new_branch> and git branch"
-	@echo "gcta - git checkout . and git status"
+	@echo "grea - git restore . and git status"
 	@echo "gdb - git branch -d <branch_name> and git branch"
 
 gs:
@@ -48,8 +48,9 @@ gctb:
 	git checkout -b $(filter-out gctb,$(MAKECMDGOALS))
 	git branch
 
-gcta:
-	git checkout $(filter-out gct,$(MAKECMDGOALS))
+grea:
+	git restore .
+	git status
 
 gdb:
 	git branch -d $(filter-out gdb,$(MAKECMDGOALS))
