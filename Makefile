@@ -7,7 +7,7 @@ help:
 	@echo "gr - git reset <file> and git status"
 	@echo "gra - git reset . and git status"
 	@echo "gpso - git push origin <branch>"
-	@echo "gpm - git push origin main"
+	@echo "gpsom - git push origin main"
 	@echo "grc - git reset --soft HEAD~1 and git status"
 	@echo "gctb - git checkout -b <new_branch> and git branch"
 	@echo "grea - git restore . and git status"
@@ -41,7 +41,7 @@ gra:
 gpso:
 	git push origin $(filter-out gpso,$(MAKECMDGOALS))
 
-gpm:
+gpsom:
 	git push origin main
 
 grc:
