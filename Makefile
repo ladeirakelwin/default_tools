@@ -1,4 +1,4 @@
-.PHONY:  gs gc gad gr gra gp gpm grc gctb grea gre gdb gsw help
+.PHONY:  gs gc gad gr gra gpso gpsom grc gctb grea gre gb gdb gsw gplom gbm help
 
 help:
 	@echo "gs - git status"
@@ -6,14 +6,17 @@ help:
 	@echo "gad - git add <file> and git status"
 	@echo "gr - git reset <file> and git status"
 	@echo "gra - git reset . and git status"
-	@echo "gp - git push origin <branch>"
-	@echo "gpm - git push origin main"
+	@echo "gpso - git push origin <branch>"
+	@echo "gpsom - git push origin main"
 	@echo "grc - git reset --soft HEAD~1 and git status"
 	@echo "gctb - git checkout -b <new_branch> and git branch"
 	@echo "grea - git restore . and git status"
 	@echo "gre - git restore <file>"
+	@echo "gb - git branch"
 	@echo "gdb - git branch -d <branch_name> and git branch"
 	@echo "gsw - git switch <branch_name>"
+	@echo "gplom - git pull origin main"
+	@echo "gbm - git branch -m <new_name>"
 
 gs:
 	git status
@@ -36,10 +39,11 @@ gr:
 gra:
 	git reset .
 	git status
-gp:
-	git push origin $(filter-out gp,$(MAKECMDGOALS))
 
-gpm:
+gpso:
+	git push origin $(filter-out gpso,$(MAKECMDGOALS))
+
+gpsom:
 	git push origin main
 
 grc:
@@ -57,9 +61,19 @@ grea:
 gre:
 	git restore $(filter-out gre,$(MAKECMDGOALS))
 
+gb:
+	git branch
+
 gdb:
 	git branch -d $(filter-out gdb,$(MAKECMDGOALS))
 	git branch
 
 gsw:
 	git switch $(filter-out gsw,$(MAKECMDGOALS))
+
+gplom:
+	git pull origin main
+
+gbm:
+	git branch -m $(filter-out gbm,$(MAKECMDGOALS))
+	git branch
