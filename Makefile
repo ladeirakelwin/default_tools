@@ -76,3 +76,4 @@ gplom:
 
 gbm:
 	git branch -m $(filter-out gbm,$(MAKECMDGOALS))
+	git branch
