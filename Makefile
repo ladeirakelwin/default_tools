@@ -1,4 +1,4 @@
-.PHONY:  gs gc gad gr gra gpso gpm grc gctb grea gre gb gdb gsw gbm help
+.PHONY:  gs gc gad gr gra gpso gpsom grc gctb grea gre gb gdb gsw gplom gbm help
 
 help:
 	@echo "gs - git status"
@@ -15,6 +15,7 @@ help:
 	@echo "gb - git branch"
 	@echo "gdb - git branch -d <branch_name> and git branch"
 	@echo "gsw - git switch <branch_name>"
+	@echo "gplom - git pull origin main"
 	@echo "gbm - git branch -m <new_name>"
 
 gs:
