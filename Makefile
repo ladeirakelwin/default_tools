@@ -68,3 +68,6 @@ gdb:
 
 gsw:
 	git switch $(filter-out gsw,$(MAKECMDGOALS))
+
+gplom:
+	git pull origin main
