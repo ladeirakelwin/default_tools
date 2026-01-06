@@ -1,4 +1,4 @@
-.PHONY:  gs gc gad gr gra gp gpm grc gctb grea gre gb gdb gsw help
+.PHONY:  gs gc gad gr gra gpso gpm grc gctb grea gre gb gdb gsw help
 
 help:
 	@echo "gs - git status"
@@ -6,7 +6,7 @@ help:
 	@echo "gad - git add <file> and git status"
 	@echo "gr - git reset <file> and git status"
 	@echo "gra - git reset . and git status"
-	@echo "gp - git push origin <branch>"
+	@echo "gpso - git push origin <branch>"
 	@echo "gpm - git push origin main"
 	@echo "grc - git reset --soft HEAD~1 and git status"
 	@echo "gctb - git checkout -b <new_branch> and git branch"
@@ -37,8 +37,9 @@ gr:
 gra:
 	git reset .
 	git status
-gp:
-	git push origin $(filter-out gp,$(MAKECMDGOALS))
+
+gpso:
+	git push origin $(filter-out gpso,$(MAKECMDGOALS))
 
 gpm:
 	git push origin main
