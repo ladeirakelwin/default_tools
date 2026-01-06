@@ -1,4 +1,4 @@
-.PHONY:  gs gc gad gr gra gp gpm grc gctb grea gre gdb gsw help
+.PHONY:  gs gc gad gr gra gp gpm grc gctb grea gre gb gdb gsw help
 
 help:
 	@echo "gs - git status"
@@ -12,6 +12,7 @@ help:
 	@echo "gctb - git checkout -b <new_branch> and git branch"
 	@echo "grea - git restore . and git status"
 	@echo "gre - git restore <file>"
+	@echo "gb - git branch"
 	@echo "gdb - git branch -d <branch_name> and git branch"
 	@echo "gsw - git switch <branch_name>"
 
@@ -56,6 +57,9 @@ grea:
 
 gre:
 	git restore $(filter-out gre,$(MAKECMDGOALS))
+
+gb:
+	git branch
 
 gdb:
 	git branch -d $(filter-out gdb,$(MAKECMDGOALS))
